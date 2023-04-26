@@ -29,7 +29,8 @@ jobs:
         run: ipconfig
         
   terceiro:
-    runs-on: mac-latest
+    runs-on: ubuntu-latest
+    name: Terceiro
     steps:
       - run: echo "${{ github.event_name }} foi disparado"
       - run: echo " No ${{ runner.os }} server hosted by Github has this job"
