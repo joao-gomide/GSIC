@@ -36,10 +36,10 @@ jobs:
       - run: echo " No ${{ runner.os }} server hosted by Github has this job"
       - run: echo "Details of your Repo -  repo-name - ${{ github.repository }} and branch name is ${{ github.ref }} and your repository is ${{ github.repository }}"
       - name: Check out Repo
-        uses: action/joao-gomide@GSIC
+        uses: action/GSIC@v3
       - run: echo "The runner has cloned your ${{ github.repository }} repo"
       - run: echo "The workflow can now test your code with the runner."
-      - name: List filçes in the repo
+      - name: List files in the repo
         run: |
           ls ${{ github.workspace }}
       - run: echo "This job has a ${{ job.status }} status"
