@@ -1,0 +1,25 @@
+name: Aula de GCS
+on: push
+
+defaults: 
+  run:
+    shell: bash
+    #working-directory: 
+
+jobs:
+  primeiro:
+    runs-on: ubuntu-latest
+    name: Primeiro Job Escrito
+    steps:
+      - name: Mostrar Rodando
+        run: echo teste
+    
+  segundo:
+    runs-on: windows-latest
+    name: Segund Job
+    steps: 
+      - name: Cirando Vairiaveis Ambiente
+        env:
+          VAR1: Isso é
+          VAR2: Github Actions
+        run:  echo $VAR1 $VAR2
