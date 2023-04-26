@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Mostrar Rodando
         run: echo teste
+      - name: Mostrar Rodando
+        run: echo "${{ github.event_name}} foi disparado"
     
   segundo:
     runs-on: windows-latest
@@ -25,3 +27,19 @@ jobs:
         run:  echo $VAR1 $VAR2 
       - name: View IP
         run: ipconfig
+        
+  terceiro:
+    runs-on: mac-latest
+    steps:
+      - run: echo "${{ github.event_name }} foi disparado"
+      - run: echo " No ${{ runner.os }} server hosted by Github has this job"
+      - run: echo "Details of your Repo -  repo-name - ${{ github.repository }} and branch name is ${{ github.ref }} and your repository is ${{ github.repository }}"
+      - name: Check out Repo
+        uses: action/checkout@v3
+      - run: echo "The runner has cloned your ${{ github.repository }} repo"
+      - run: echo "The workflow can now test your code with the runner."
+      - name: List filçes in the repo
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "This job has a ${{ job.status }} status"
+      
