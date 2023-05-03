@@ -18,7 +18,11 @@ jobs:
       - name: Listar Conteúdo
         run: ls -la ${{ github.workspace }}
       - name: Listar Rede
-        run: ipconfig
+        run: ip a |
+             systemd-resolve --status | 
+             grep Current |
+             ip r
+
     
   segundo:
     runs-on: windows-latest
