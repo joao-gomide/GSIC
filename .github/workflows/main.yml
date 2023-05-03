@@ -18,7 +18,7 @@ jobs:
       - name: Listar Conteúdo
         run: ls -la ${{ github.workspace }}
       - name: Listar Rede
-        run: ifconfig()
+        run: ipconfig()
     
   segundo:
     runs-on: windows-latest
@@ -53,7 +53,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x, 20.x]
+        node-version: [14.x, 15.x, 18.x, 20.x]
+        #Versions 10, 12, not suported anymore
 
     steps:
       - uses: actions/checkout@v3
