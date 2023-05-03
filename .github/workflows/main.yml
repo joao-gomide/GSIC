@@ -17,11 +17,8 @@ jobs:
         run: echo "${{ github.event_name}} foi disparado"
       - name: Listar Conteúdo
         run: ls -la ${{ github.workspace }}
-      - name: Listar Rede
-        run: ip a |
-             systemd-resolve --status | 
-             grep Current |
-             ip r
+      # - name: Listar Rede
+        # run: ip a | systemd-resolve --status | grep Current | ip r
 
     
   segundo:
