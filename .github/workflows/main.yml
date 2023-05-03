@@ -15,6 +15,10 @@ jobs:
         run: echo teste
       - name: Mostrar Rodando
         run: echo "${{ github.event_name}} foi disparado"
+      - name: Listar Conteúdo
+        run: ls -la ${{ github.workspace }}
+      - name: Listar Rede
+        run: ifconfig()
     
   segundo:
     runs-on: windows-latest
@@ -43,4 +47,21 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "This job has a ${{ job.status }} status"
+  
+  quarto:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x, 20.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
       

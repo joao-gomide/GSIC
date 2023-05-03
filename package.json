@@ -1,0 +1,23 @@
+{
+  "name": "gsic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joao-gomide/GSIC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joao-gomide/GSIC/issues"
+  },
+  "homepage": "https://github.com/joao-gomide/GSIC#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
